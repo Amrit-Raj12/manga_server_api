@@ -12,6 +12,11 @@ app.use(ApiKey)
 app.use("/api/manga", mangaRouter)
 app.use("/api/mangaList", mangaListRouter)
 app.use("/api/search", mangaSearch)
+app.use("/", (req, res)=>{
+    res.send({
+        message: "Welcome to Manga API"
+    })  
+})
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Server Start On Port ${process.env.PORT} 🎉✨ `)
